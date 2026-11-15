@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="تحية لطلال مداح، صوت الأرض (١٩٤٠–٢٠٠٠): حياته عامًا بعد عام، مع أغانيه.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.youtube.com https://s.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; connect-src 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>طلال مداح — صوت الأرض</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-mood="dawn">
+  <div class="sky" aria-hidden="true"></div>
+
+  <!-- Flowing music staff -->
+  <svg class="staff" viewBox="0 0 1600 160" preserveAspectRatio="none" aria-hidden="true">
+    <g id="staff-lines"></g>
+  </svg>
+
+  <!-- The oud, in his two looks: the dark oud with gold rosettes and a mother-of-pearl edge,
+       and the honey-coloured oud with a calligraphy rosette he played in Abha in 1999.
+       Strings vibrate and notes rise from the soundhole while music plays. -->
+  <svg class="oud" id="oud" viewBox="0 0 400 940" aria-hidden="true">
+    <defs>
+      <path id="body-shape" d="M200 902 C70 902 20 790 20 670 C20 548 112 452 154 428 L246 428 C288 452 380 548 380 670 C380 790 330 902 200 902 Z"/>
+      <clipPath id="body-clip"><use href="#body-shape"/></clipPath>
+      <radialGradient id="ebony-top" cx=".42" cy=".38" r=".8">
+        <stop offset="0" stop-color="#2b1d13"/><stop offset=".6" stop-color="#120b06"/><stop offset="1" stop-color="#050302"/>
+      </radialGradient>
+      <radialGradient id="honey-top" cx=".42" cy=".36" r=".85">
+        <stop offset="0" stop-color="#f0a85a"/><stop offset=".55" stop-color="#c46a26"/><stop offset="1" stop-color="#6e3311"/>
+      </radialGradient>
+      <radialGradient id="shine" cx=".36" cy=".3" r=".7">
+        <stop offset="0" stop-color="#fff2d8" stop-opacity=".32"/><stop offset=".6" stop-color="#fff2d8" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="ebony" x1="0" x2="1">
+        <stop offset="0" stop-color="#1c120a"/><stop offset=".5" stop-color="#3a2614"/><stop offset="1" stop-color="#140c06"/>
+      </linearGradient>
+      <linearGradient id="neckwood" x1="0" x2="1">
+        <stop offset="0" stop-color="#3a200d"/><stop offset=".5" stop-color="#7a4a22"/><stop offset="1" stop-color="#2c170a"/>
+      </linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f6dc93"/><stop offset=".5" stop-color="#c99a3e"/><stop offset="1" stop-color="#8a6420"/>
+      </linearGradient>
+      <path id="callig-ring" d="M0 -55 A55 55 0 1 1 -0.01 -55"/>
+    </defs>
+    <g class="oud-tilt">
+      <path d="M181 200 L197 58 Q199 46 211 48 L227 54 L220 200 Z" fill="url(#neckwood)" class="oud-line"/>
+      <g id="oud-pegs"></g>
+      <path d="M164 440 L176 200 L224 200 L236 440 Z" fill="url(#neckwood)" class="oud-line"/>
+
+      <!-- Look 1: dark oud, gold rosettes, mother-of-pearl edge -->
+      <g class="look look-ebony">
+        <use href="#body-shape" fill="url(#ebony-top)"/>
+        <use href="#body-shape" fill="url(#shine)"/>
+        <g clip-path="url(#body-clip)">
+          <use href="#body-shape" fill="none" stroke="#efe6d4" stroke-width="16" stroke-dasharray="9 3"/>
+          <use href="#body-shape" fill="none" stroke="#0a0604" stroke-width="2" transform="translate(200 670) scale(.955) translate(-200 -670)"/>
+          <use href="#body-shape" fill="none" stroke="url(#gold)" stroke-width="1.2" transform="translate(200 670) scale(.94) translate(-200 -670)"/>
+        </g>
+        <use href="#body-shape" fill="none" stroke="#c9a86a" stroke-width="1.5"/>
+        <g transform="translate(200 560)">
+          <circle r="56" fill="none" stroke="url(#gold)" stroke-width="2.5"/>
+          <circle r="50" fill="#070403" class="soundhole"/>
+          <g class="gold-rose" id="rose-eb-main"></g>
+        </g>
+        <g transform="translate(116 650)"><circle r="23" fill="none" stroke="url(#gold)" stroke-width="1.8"/><circle r="20" fill="#070403"/><g class="gold-rose" id="rose-eb-l"></g></g>
+        <g transform="translate(284 650)"><circle r="23" fill="none" stroke="url(#gold)" stroke-width="1.8"/><circle r="20" fill="#070403"/><g class="gold-rose" id="rose-eb-r"></g></g>
+      </g>
+
+      <!-- Look 2: honey-coloured oud, calligraphy rosette, dotted inlay edge (Abha, 1999) -->
+      <g class="look look-honey">
+        <use href="#body-shape" fill="url(#honey-top)"/>
+        <use href="#body-shape" fill="url(#shine)"/>
+        <g clip-path="url(#body-clip)">
+          <use href="#body-shape" fill="none" stroke="#2a1309" stroke-width="22"/>
+          <use href="#body-shape" fill="none" stroke="#f4e6c6" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0 10.5" transform="translate(200 670) scale(.985) translate(-200 -670)"/>
+          <use href="#body-shape" fill="none" stroke="#2a1309" stroke-width="1.4" transform="translate(200 670) scale(.955) translate(-200 -670)"/>
+        </g>
+        <path d="M206 700 C262 708 278 770 252 812 C236 836 186 842 166 818 C146 794 150 752 166 728 C176 712 190 702 206 700 Z" fill="#7d2615" fill-opacity=".92"/>
+        <g transform="translate(200 588)">
+          <circle r="66" fill="#3a1b0b"/>
+          <circle r="66" fill="none" stroke="#f1dfb8" stroke-width="1.2"/>
+          <text class="callig" font-size="12"><textPath href="#callig-ring" startOffset="0" textLength="338" lengthAdjust="spacing">طلال مداح ✦ صوت الأرض ✦ طلال مداح ✦ صوت الأرض ✦</textPath></text>
+          <circle r="45" fill="#0c0603" class="soundhole" stroke="#f1dfb8" stroke-width="1"/>
+          <g class="cream-rose" id="rose-hn"></g>
+        </g>
+      </g>
+
+      <path d="M170 512 L180 200 L220 200 L230 512 Q200 522 170 512 Z" fill="url(#ebony)" class="oud-line"/>
+      <rect x="177" y="195" width="46" height="7" rx="2" fill="#efe2c4"/>
+      <rect x="146" y="838" width="108" height="13" rx="4" fill="url(#ebony)" class="oud-line"/>
+      <g id="oud-strings"></g>
+    </g>
+  </svg>
+
+  <!-- Note shapes for the rising notes -->
+  <svg class="defs-only" width="0" height="0" aria-hidden="true">
+    <symbol id="note-1" viewBox="0 0 24 40"><path d="M15 2v26.5A6.5 5 -20 1 1 12 24V2h3z"/></symbol>
+    <symbol id="note-2" viewBox="0 0 24 40"><path d="M10 2h3c0 6 9 8 9 17 0 3-1 5-2 7 0-6-3-9-7-10v15A6.5 5 -20 1 1 10 27z"/></symbol>
+    <symbol id="note-3" viewBox="0 0 40 40"><path d="M10 6l24-5v26A6 4.6 -20 1 1 31 23V10L13 14v17A6 4.6 -20 1 1 10 27z"/></symbol>
+  </svg>
+  <div class="notes" id="notes" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="mark" href="#" data-action="restart" data-i18n="name">Talal Maddah</a>
+    <div class="controls">
+      <button class="pill" type="button" id="sound-btn" aria-pressed="true">
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span id="sound-label" data-i18n="unmuted">Sound on</span>
+      </button>
+      <button class="pill" type="button" id="gallery-btn">
+        <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 15l5-5 4 4 3-3 4 4" /></svg>
+        <span data-i18n="gallery">Photos</span>
+      </button>
+      <button class="pill" type="button" id="lang-btn" data-i18n="langSwitch">العربية</button>
+    </div>
+  </header>
+
+  <main id="stage" class="stage" aria-roledescription="carousel" aria-live="polite">
+    <div class="track" id="track"></div>
+  </main>
+
+  <div class="nav-arrows">
+    <button type="button" class="arrow" id="prev-btn"><span aria-hidden="true">‹</span></button>
+    <button type="button" class="arrow" id="next-btn"><span aria-hidden="true">›</span></button>
+  </div>
+
+  <nav class="timeline" aria-labelledby="timeline-label">
+    <span class="sr" id="timeline-label" data-i18n="timeline"></span>
+    <div class="ruler" id="ruler">
+      <div class="ruler-line"></div>
+      <div class="ruler-progress" id="ruler-progress"></div>
+    </div>
+  </nav>
+
+  <!-- YouTube's terms require the player to stay visible -->
+  <aside class="yt-dock" id="yt-dock">
+    <div id="yt-player"></div>
+  </aside>
+
+  <dialog class="gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-head">
+      <div>
+        <h2 id="gallery-title" data-i18n="galleryTitle"></h2>
+        <p data-i18n="galleryIntro"></p>
+      </div>
+      <button type="button" class="pill" data-close data-i18n="close"></button>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox">
+    <button type="button" class="lb-close pill" data-close data-i18n="close"></button>
+    <figure class="lb-figure">
+      <img id="lb-img" alt="">
+      <figcaption>
+        <span id="lb-caption"></span>
+        <a id="lb-link" target="_blank" rel="noopener noreferrer"></a>
+        <span id="lb-credit" class="lb-credit"></span>
+      </figcaption>
+    </figure>
+    <button type="button" class="arrow lb-prev" id="lb-prev"><span aria-hidden="true">‹</span></button>
+    <button type="button" class="arrow lb-next" id="lb-next"><span aria-hidden="true">›</span></button>
+  </dialog>
+
+  <section class="intro" id="intro" aria-labelledby="intro-name">
+    <div class="intro-inner">
+      <figure class="arch">
+        <img src="images/talal-portrait.png" alt="" width="437" height="644">
+        <figcaption data-i18n="portraitCredit"></figcaption>
+      </figure>
+      <div class="intro-copy">
+        <p class="kicker" data-i18n="kicker"></p>
+        <h1 id="intro-name">
+          <span class="intro-ar" lang="ar">طلال مداح</span>
+          <span class="intro-en" lang="en">Talal Maddah</span>
+        </h1>
+        <p class="epithet" data-i18n="epithet"></p>
+        <p class="lifespan" data-i18n="lifespan"></p>
+        <p class="intro-text" data-i18n="intro"></p>
+        <div class="intro-actions">
+          <button type="button" class="cta" id="begin-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <span data-i18n="begin"></span>
+          </button>
+          <button type="button" class="link-btn" id="begin-silent-btn" data-i18n="beginNoSound"></button>
+        </div>
+        <p class="hint" data-i18n="hint"></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
