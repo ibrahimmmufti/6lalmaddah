@@ -1,43 +1,52 @@
-# Talal Maddah — The Voice of the Land
+<div dir="rtl">
 
-A bilingual (English / Arabic) tribute that moves through his life from 1940 to 2000, one chapter at a time, with a song for each chapter.
+# طلال مداح — صوت الأرض
 
-## Run it
+**[طلال-مداح.com](https://xn----ymcbyi9b9ebk.com)**
 
-```bash
-python3 -m http.server 8040
-```
+تحية وفاء لطلال مداح (١٩٤٠–٢٠٠٠)، صوت الأرض. الموقع رحلة في حياته من مولده في مكة حتى رحيله على مسرح المفتاحة في أبها، مرحلة بعد مرحلة، ولكل مرحلة أغنيتها من قناته الرسمية.
 
-Then open http://localhost:8040. It's a static site, so you can host it on GitHub Pages, Netlify, or any web server.
+![طلال مداح — صوت الأرض](images/share-card.jpg)
 
-## Add the music
+## ماذا يقدّم الموقع
 
-Every chapter plays a song from the official channel, [قناة طلال مداح الرسمية](https://www.youtube.com/@6laltv-y2n), through a small YouTube player in the corner. The player has to stay visible because YouTube's terms require it. The photos are the thumbnails of the channel's videos, plus two free-licensed photos from Wikimedia Commons in `images/`.
+- **رحلة في حياته:** إحدى عشرة مرحلة من ١٩٤٠ إلى ٢٠٠٠: طفولته، العود الذي خبّأه، أول أغنية في إذاعة جدة، «وطني الحبيب»، اكتشافه عبادي الجوهر وابتسام لطفي، رباعيته مع بدر بن عبدالمحسن ومحمد العبدالله الفيصل وسراج عمر، «مقادير» في القاهرة، وصولًا إلى الأغنية الأخيرة «الله يرد خطاك». تتنقّل بين المراحل بالأسهم أو التمرير أو السحب، أو تتركها تمضي وحدها بالتشغيل التلقائي.
+- **أغنية لكل مرحلة:** تبدأ الأغنية مع كل مرحلة وتتلاشى عند الانتقال إلى غيرها، والعود المرسوم تهتز أوتاره وتتصاعد منه النغمات مع الموسيقى.
+- **الأغاني والألبومات:**
+  - أغاني الرحلة مع الشاعر والملحن، وروابط يوتيوب وساوندكلاود والكلمات.
+  - ٨٥ ألبومًا رسميًا مرتبة حسب العقد.
+  - ٣٠ حفلة وجلسة من القناة الرسمية تضم ٢٢٥ أغنية، كل أغنية برابط تسجيلها.
+- **معرض الصور:** صور من الحفلات والتلفزيون وأغلفة الألبومات.
+- **اعزف على العود:** عود يُعزف بالأصابع أو بلوحة المفاتيح على خمسة مقامات (راست، بياتي، حجاز، صبا، كرد) بأرباع الأصوات الحقيقية. تنقر الوتر، وتضغط مطوّلًا للرَّش، وتنزلق بين النغمات. ويمكنك أن تسجّل عزفك وتشارك رابطه، أو تتعلّم جملًا تقليدية قصيرة تتبع فيها الضوء.
+- **ذكرى الميلاد والرحيل:** في ٥ أغسطس و١١ أغسطس تتغيّر الصفحة الأولى إلى كلمة في ذكراه مع أغنية مناسبة.
+- **بالعربية أولًا:** يفتح الموقع بالعربية دائمًا، والإنجليزية بضغطة زر. ويعمل على الجوال والحاسوب.
 
-To change a song, edit the chapter's `track` entry in `content.js`. Set **one** of these:
+## المصادر
 
-- `youtube: "XXXXXXXXXXX"`: the 11-character ID of a video on the channel (the part after `watch?v=`).
-- `file: "audio/03-wardak.mp3"`: an audio file you have the right to use, placed in `audio/`.
-- `start: 30` (optional): the second where playback starts.
+- **السيرة والتواريخ:** ويكيبيديا العربية والإنجليزية، وصحف عكاظ والوطن والراي والمدينة وصدى البلد وعنب بلدي وسكاي نيوز عربية والجزيرة. التواريخ الهجرية محوّلة إلى سنوات ميلادية تقريبية.
+- **الشعراء والملحنون:** الصحافة وأرشيف موقع فنانين. وما لم نتحقق منه مكتوب في الموقع صراحةً.
+- **قائمة الألبومات:** ويكيبيديا العربية والإنجليزية. لا تذكر المصادر إلا عقد الإصدار للألبومات قبل ٢٠٠١.
+- **الحفلات والجلسات:** قوائم التشغيل في قناة طلال مداح الرسمية على يوتيوب.
 
-Tracks fade into each other as you move between chapters. On the final chapter the song plays once at a lower volume and then the site goes quiet.
+إن وجدت خطأ في معلومة أو تاريخ، فافتح بلاغًا في [Issues](../../issues) مع المصدر، ونصحّحه.
 
-## Photos and the oud
+## الحقوق والشكر
 
-All photos are listed once in `photos` in `content.js`, and each chapter picks a main photo plus a few more (`more`). The **Photos** button opens a gallery of all of them.
+- **الأغاني والفيديو:** من [قناة طلال مداح الرسمية](https://www.youtube.com/@6laltv-y2n) و[صفحتها على ساوندكلاود](https://soundcloud.com/6lalchannel/). يعرضها الموقع عبر مشغّل يوتيوب، ولا يستضيف أي تسجيل.
+- **كلمات الأغاني:** لا ننشر نصوصها احترامًا لحقوق الشعراء وورثتهم، ونحيل إليها في موقعي [فنانين](https://fnanen.com) و[كلمات](https://kalemat.app).
+- **الصور:**
+  - الصورة الشخصية: بيت الفن، برخصة [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)، عبر ويكيميديا كومنز. وبطاقة المشاركة مأخوذة منها وتخضع للرخصة نفسها.
+  - صورة صحيفة الجزيرة (١٩٨٣): ملكية عامة.
+  - بقية الصور: صور مصغّرة لفيديوهات القناة الرسمية.
+- **العود المرسوم:** رسمناه على هيئة عوديه المعروفين: العود الداكن ذو الوردات الذهبية، والعود العسلي ذو الوردة المخطوطة الذي عزف عليه في أبها عام ١٩٩٩. أما الكتابة في الوردة فتصميم مستوحى منها، وليست نقلًا للنقش الأصلي.
+- **الخطوط:** أميري، وCormorant Garamond، وIBM Plex Sans Arabic، وكلها برخصة SIL Open Font License.
 
-The oud is drawn in his two looks, taken from concert footage on the channel: a dark oud with gold rosettes and a mother-of-pearl edge, and the honey-coloured oud with a calligraphy rosette that he played in Abha in 1999. Set each chapter's `oud` to `"ebony"` or `"honey"`. The writing in the calligraphy ring is a stylised version (his name and "صوت الأرض"), not a copy of the real inscription.
+## ملاحظة
 
-## Edit the text
+هذا موقع غير رسمي، صنعه محبّون تحيةً لفنّه وذكراه، ولا صلة له بعائلته أو بشركات الإنتاج. رحمه الله.
 
-All text is in `content.js`, under `en` and `ar`. After editing, run:
+---
 
-```bash
-node scripts/check-content.mjs
-```
+للمطوّرين: طريقة التشغيل وبنية الملفات والفحص الآلي في [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
-The check fails if the two languages have different fields, if a field is empty, if the chapters are out of year order, or if a track path or ID is invalid.
-
-## Sources
-
-The facts come from English and Arabic Wikipedia. Where only a Hijri year was available, the site shows the Hijri year in Arabic and an approximate Gregorian year in English.
+</div>

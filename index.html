@@ -7,6 +7,24 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.youtube.com https://s.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; connect-src 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>طلال مداح — صوت الأرض</title>
+  <!-- Share preview (WhatsApp, X, Telegram, iMessage…). Image URLs must be absolute. -->
+  <link rel="canonical" href="https://xn----ymcbyi9b9ebk.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="طلال مداح — صوت الأرض">
+  <meta property="og:title" content="طلال مداح — صوت الأرض">
+  <meta property="og:description" content="تحية لطلال مداح (١٩٤٠–٢٠٠٠): حياته عامًا بعد عام، مع أغانيه.">
+  <meta property="og:url" content="https://xn----ymcbyi9b9ebk.com/">
+  <meta property="og:image" content="https://xn----ymcbyi9b9ebk.com/images/share-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="طلال مداح، صوت الأرض، ١٩٤٠–٢٠٠٠">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="طلال مداح — صوت الأرض">
+  <meta name="twitter:description" content="تحية لطلال مداح (١٩٤٠–٢٠٠٠): حياته عامًا بعد عام، مع أغانيه.">
+  <meta name="twitter:image" content="https://xn----ymcbyi9b9ebk.com/images/share-card.jpg">
+  <meta name="theme-color" content="#0e0b08">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://i.ytimg.com">
@@ -104,6 +122,8 @@
     <symbol id="note-2" viewBox="0 0 24 40"><path d="M10 2h3c0 6 9 8 9 17 0 3-1 5-2 7 0-6-3-9-7-10v15A6.5 5 -20 1 1 10 27z"/></symbol>
     <symbol id="note-3" viewBox="0 0 40 40"><path d="M10 6l24-5v26A6 4.6 -20 1 1 31 23V10L13 14v17A6 4.6 -20 1 1 10 27z"/></symbol>
   </svg>
+  <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+  <div class="sweep" id="sweep" aria-hidden="true"></div>
   <div class="notes" id="notes" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 
@@ -114,9 +134,24 @@
         <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
         <span id="sound-label" data-i18n="unmuted">Sound on</span>
       </button>
+      <button class="pill" type="button" id="tour-btn" aria-pressed="false">
+        <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h3v14H7z M14 5h3v14h-3z"/></svg>
+        <span class="pill-label" id="tour-label" data-i18n="tour"></span>
+      </button>
+      <button class="pill" type="button" id="share-btn">
+        <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12 M7 8l5-5 5 5 M5 13v7h14v-7"/></svg>
+        <span class="pill-label" data-i18n="share"></span>
+      </button>
+      <button class="pill" type="button" id="music-btn">
+        <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13 M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0z M20 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+        <span class="pill-label" data-i18n="music"></span>
+      </button>
       <button class="pill" type="button" id="gallery-btn">
         <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 15l5-5 4 4 3-3 4 4" /></svg>
-        <span data-i18n="gallery">Photos</span>
+        <span class="pill-label" data-i18n="gallery">Photos</span>
+      </button>
+      <button class="pill icon-only" type="button" id="fs-btn" hidden>
+        <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5 M15 4h5v5 M20 15v5h-5 M9 20H4v-5"/></svg>
       </button>
       <button class="pill" type="button" id="lang-btn" data-i18n="langSwitch">العربية</button>
     </div>
@@ -127,9 +162,44 @@
   </main>
 
   <div class="nav-arrows">
+    <span class="counter" id="counter" aria-hidden="true"></span>
     <button type="button" class="arrow" id="prev-btn"><span aria-hidden="true">‹</span></button>
-    <button type="button" class="arrow" id="next-btn"><span aria-hidden="true">›</span></button>
+    <button type="button" class="arrow" id="next-btn">
+      <svg class="tour-ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5" pathLength="100"/></svg>
+      <span aria-hidden="true">›</span>
+    </button>
   </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Play the oud: the big oud comes forward and its strings can be plucked -->
+  <button type="button" class="oud-play-btn" id="oud-play-btn" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 20.5c-2.6-2.6-1.6-7.4 1.8-9.6 2.4-1.6 5-1.2 6.2.4 1.4 1.4 1.6 4 0 6.3-2.2 3.4-6.8 4.1-8 2.9z M8.8 16.2a1.6 1.6 0 1 0 0-.1 M13.6 11.4l5.4-5.4 M18.2 4.6l1.6-1.4 1.4 1.4-1.4 1.6"/></svg>
+    <span data-i18n="playOud"></span>
+  </button>
+  <section class="oud-panel" id="oud-panel" aria-labelledby="oud-panel-title" hidden>
+    <div class="oud-panel-row">
+      <h2 id="oud-panel-title" data-i18n="playOud"></h2>
+      <button type="button" class="pill" id="oud-close" data-i18n="close"></button>
+    </div>
+    <div class="oud-maqam" role="radiogroup" aria-labelledby="maqam-label">
+      <span id="maqam-label" data-i18n="maqam"></span>
+      <div class="chips" id="maqam-chips"></div>
+    </div>
+    <div class="shared-box" id="shared-box" hidden>
+      <span data-i18n="sharedPerf"></span>
+      <button type="button" class="pill" id="shared-play" data-i18n="playShared"></button>
+    </div>
+    <div class="oud-tools">
+      <button type="button" class="tool rec" id="rec-btn" aria-pressed="false"><i aria-hidden="true"></i><span data-i18n="record"></span></button>
+      <button type="button" class="tool" id="rec-play" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-i18n="playRec"></span></button>
+      <button type="button" class="tool" id="rec-share" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path class="line" d="M12 3v12 M7 8l5-5 5 5 M5 13v7h14v-7"/></svg><span data-i18n="shareRec"></span></button>
+      <button type="button" class="tool learn" id="learn-btn"><span data-i18n="learn"></span></button>
+      <span class="guide-msg" id="guide-msg" role="status" aria-live="polite"></span>
+    </div>
+    <p class="oud-hint" id="oud-hint"></p>
+  </section>
+  <div class="oud-pads" id="oud-pads" dir="ltr" aria-label="Oud"></div>
 
   <nav class="timeline" aria-labelledby="timeline-label">
     <span class="sr" id="timeline-label" data-i18n="timeline"></span>
@@ -155,6 +225,32 @@
     <div class="gallery-grid" id="gallery-grid"></div>
   </dialog>
 
+  <dialog class="gallery songs" id="songs" aria-labelledby="songs-title">
+    <div class="gallery-head">
+      <h2 id="songs-title" data-i18n="music"></h2>
+      <button type="button" class="pill" data-close data-i18n="close"></button>
+    </div>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" class="tab" id="tab-songs" aria-controls="panel-songs" data-i18n="songsList"></button>
+      <button type="button" role="tab" class="tab" id="tab-albums" aria-controls="panel-albums" data-i18n="tabAlbums"></button>
+      <button type="button" role="tab" class="tab" id="tab-sets" aria-controls="panel-sets" data-i18n="tabSets"></button>
+    </div>
+    <section id="panel-songs" role="tabpanel" aria-labelledby="tab-songs">
+      <p class="panel-intro" data-i18n="songsIntro"></p>
+      <ol class="song-list" id="song-list"></ol>
+    </section>
+    <section id="panel-albums" role="tabpanel" aria-labelledby="tab-albums" hidden>
+      <p class="panel-intro" id="albums-intro"></p>
+      <div class="chips" id="decade-chips"></div>
+      <div id="album-groups"></div>
+      <p class="panel-foot" data-i18n="albumSources"></p>
+    </section>
+    <section id="panel-sets" role="tabpanel" aria-labelledby="tab-sets" hidden>
+      <p class="panel-intro" id="sets-intro"></p>
+      <ul class="set-grid" id="set-grid"></ul>
+    </section>
+  </dialog>
+
   <dialog class="lightbox" id="lightbox">
     <button type="button" class="lb-close pill" data-close data-i18n="close"></button>
     <figure class="lb-figure">
@@ -176,6 +272,14 @@
         <figcaption data-i18n="portraitCredit"></figcaption>
       </figure>
       <div class="intro-copy">
+        <div class="remembrance" id="remembrance" hidden>
+          <p class="rem-kicker" id="rem-kicker"></p>
+          <p class="rem-text" id="rem-text"></p>
+          <button type="button" class="rem-listen" id="rem-listen">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <span id="rem-listen-label"></span>
+          </button>
+        </div>
         <p class="kicker" data-i18n="kicker"></p>
         <h1 id="intro-name">
           <span class="intro-ar" lang="ar">طلال مداح</span>
